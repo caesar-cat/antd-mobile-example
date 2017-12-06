@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Icon } from 'antd-mobile';
+import { Grid, Icon, SearchBar, WhiteSpace} from 'antd-mobile';
 import { WingBlank } from 'antd-mobile';
 import HeaderLayout from '../../layouts/HeaderLayout'
 
@@ -18,16 +18,15 @@ export default class LifeList extends React.Component{
             icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
             text: `name${i}`
         }));
-        const rightContent = [
-            <Icon key="0" type="search" style={{ marginRight: '16px' }} />
-        ]
         return(
             <div>
                 <HeaderLayout 
                     title="生活"
-                    rightContent={rightContent}
                     hasBack={false}
-                />
+                >
+                    <SearchBar placeholder="Search" maxLength={8}/>
+                    <WhiteSpace/>
+                </HeaderLayout>
                 <WingBlank>
                     <Grid data={data} activeStyle={false} onClick={this.handleClick.bind(this)}/>            
                 </WingBlank>

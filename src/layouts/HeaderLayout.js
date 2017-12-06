@@ -17,14 +17,17 @@ export default class HeaderLayout extends React.Component {
     render() {
         const { title, hasBack, rightContent, mode, onLeftClick } = this.props
         return (
-            <NavBar
-                mode={mode || "dark"}
-                onLeftClick={onLeftClick || this.onLeftClick.bind(this)}
-                leftContent={hasBack? '返回': ''}
-                rightContent={rightContent}
-            >
-                {title}
-            </NavBar>
+            <div>
+                <NavBar
+                    mode={mode || "dark"}
+                    onLeftClick={onLeftClick || this.onLeftClick.bind(this)}
+                    leftContent={hasBack? '返回': ''}
+                    rightContent={rightContent}
+                >
+                    {title}
+                </NavBar>
+                {this.props.children? this.props.children: ''}
+            </div>
         )
     }
 
