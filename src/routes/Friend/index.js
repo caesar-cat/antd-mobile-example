@@ -2,6 +2,7 @@ import react from 'React'
 import { Icon } from 'antd-mobile'
 import styles from './index.less'
 import HeaderLayout from '../../layouts/HeaderLayout'
+import Chart from '../../components/Charts/index'
 export default class Friend extends react.Component{
     render() {
         const rightContent = [
@@ -15,7 +16,7 @@ export default class Friend extends react.Component{
                     rightContent={rightContent}
                     hasBack={false}
                 />
-                <p>Friend</p>
+                <Chart/>
             </div>
         )
     }
